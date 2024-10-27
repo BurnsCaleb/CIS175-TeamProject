@@ -20,11 +20,14 @@
         <table>
             <tr>
                 <!--Table headers-->
-                <!--Last two empty for edit and delete buttons-->
+                <!--Last one empty for delete button-->
                 <th>Code</th>
                 <th>Description</th>
                 <th>Price</th>
-                <th></th>
+                <!--Added the Add product button to add a product on the products.jsp page-->
+                <th>
+                    <button id="add-button" class="buttons" type="button" onclick="window.location.href='product.jsp';">Add Product</button>
+                </th>
                 <th></th>
             </tr>
             <!--Grab each product from product.txt-->
