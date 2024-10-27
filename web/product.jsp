@@ -13,7 +13,7 @@
         <title>${product != null? "Editing Product" : "Adding Product"}</title>
     </head>
     <body>
-        <%-- Same can be found for the input as if the product is being edited instead of added the fields will populate with the needed data or be blank --%>
+      
         <form method="post" action="music?action=save">
             
             <label for="code">Product Code:</label>

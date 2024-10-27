@@ -109,20 +109,21 @@ public class ProductController extends HttpServlet {
             request.setAttribute("error", "The price given was invalid please try again.");
             return "/product.jsp";
         }
-        String idParameter = request.getParameter("id");
-        Long id = (idParameter != null && !idParameter.isEmpty())? Long.parseLong(idParameter): null;
         
-        Product product = new Product();
-        product.setCode(code);
-        product.setDescription(description);
-        product.setPrice(price);
-//      Checks to see if the id is null or filled if it is null a new product is being produced if it is not null a product is being updated        
-        if (id != null){
-            product.setId(id);
+        if (ProductIO.exists(code)) {
+        Product product = ProductIO.selectProduct(code);
+        if (product != null) {
+            product.setDescription(description);
+            product.setPrice(price);
             ProductIO.updateProduct(product);
-        } else {
-            ProductIO.insertProduct(product);
         }
+    } else {
+        Product newProduct = new Product();
+        newProduct.setCode(code);
+        newProduct.setDescription(description);
+        newProduct.setPrice(price);
+        ProductIO.insertProduct(newProduct);
+    }
         
         return manage(request, response);
         
