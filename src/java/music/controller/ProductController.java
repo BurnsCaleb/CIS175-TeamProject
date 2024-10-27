@@ -26,29 +26,54 @@ public class ProductController extends HttpServlet {
     public void doGet(HttpServletRequest request,
             HttpServletResponse response)
             throws ServletException, IOException {
-        String action = request.getParameter("action");
-        String url = "";
-        
-//        TODO: change to switch case to handle edit and delete pages
-        if (action.equals("manage")) {
-            url = manage(request, response);
-        }
-
-        getServletContext().getRequestDispatcher(url)
-                .forward(request, response);
+        // calls doPost
+        doPost(request, response);
     }
-
+    
     public void doPost(HttpServletRequest request,
             HttpServletResponse response)
             throws ServletException, IOException {
         String action = request.getParameter("action");
         String url = "";
-//        TODO: change to switch case to handle edit and delete pages
-        if (action.equals("manage")) {
-            url = manage(request, response);
+        String productCode = "";
+        Product product;
+//      Added switch case to handle edit pages
+        switch (action){
+            case "save":
+                url = save(request, response);
+                break;
+            case "manage":
+                url = manage(request, response);
+                break;
+            // moved to doPost method
+            case "edit":
+                url = edit(request, response);
+                break;
+            // Delete cases for delete link on products page
+            // and yes/no buttons on confirmdelete page
+            case "delete":
+                productCode = request.getParameter("code");
+                product = ProductIO.selectProduct(productCode);
+                request.setAttribute("product", product);
+                url = "/confirmdelete.jsp";
+                break;
+            case "deleteYes":
+                productCode = request.getParameter("code");
+                product = ProductIO.selectProduct(productCode);
+                ProductIO.deleteProduct(product);
+                List<Product> products = ProductIO.selectProducts();
+                request.setAttribute("productsList", products);
+                url = "/products.jsp";
+                break;
+            case "deleteNo":
+                products = ProductIO.selectProducts();
+                request.setAttribute("productsList", products);
+                url = "/products.jsp";
+                break;
         }
 
-        getServletContext().getRequestDispatcher(url)
+        getServletContext()
+                .getRequestDispatcher(url)
                 .forward(request, response);
     }
 
@@ -64,4 +89,44 @@ public class ProductController extends HttpServlet {
         request.setAttribute("productsList", products);
         return "/products.jsp";
     }
+//      Pulls product from productIO to be available for editing on the product page
+    private String edit(HttpServletRequest request, HttpServletResponse response) {
+        String code = request.getParameter("code");
+        Product product = ProductIO.selectProduct(code);
+        request.setAttribute("product", product);
+        return "/product.jsp";
+    }
+//      Handles logic for adding a new product or updating an already made product
+    private String save(HttpServletRequest request, HttpServletResponse response){
+        String code = request.getParameter("code");
+        String description = request.getParameter("description");
+        double price = 0.0;
+        
+//      checking for a valid price input or giving an error message if incorrect
+        try{
+            price = Double.parseDouble(request.getParameter("price"));
+        }catch (NumberFormatException e){
+            request.setAttribute("error", "The price given was invalid please try again.");
+            return "/product.jsp";
+        }
+        String idParameter = request.getParameter("id");
+        Long id = (idParameter != null && !idParameter.isEmpty())? Long.parseLong(idParameter): null;
+        
+        Product product = new Product();
+        product.setCode(code);
+        product.setDescription(description);
+        product.setPrice(price);
+//      Checks to see if the id is null or filled if it is null a new product is being produced if it is not null a product is being updated        
+        if (id != null){
+            product.setId(id);
+            ProductIO.updateProduct(product);
+        } else {
+            ProductIO.insertProduct(product);
+        }
+        
+        return manage(request, response);
+        
+    }
+    
+    
 }
