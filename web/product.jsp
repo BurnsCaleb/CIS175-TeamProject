@@ -5,6 +5,8 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="custom" uri="http://example.com/custom" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -85,17 +87,17 @@
       
         <form method="post" action="music?action=save" onsubmit="return validatemyForm()">
            <div>
-            <label for="code">Product Code:</label>
-            <input type="text" id="code" name="code" value="${product != null ? product.code : ''}"/>
-            <div id="codeError" class="error"></div>
+            <label for="code"><custom:requiredFieldTags fieldName="Product Code:"/></label>
+                <input type="text" id="code" name="code" value="${product != null ? product.code : ''}"/>
+                 <div id="codeError" class="error"></div>
            </div>
            <div>
-            <label for="description">Description:</label>
+            <label for="description"><custom:requiredFieldTags fieldName="Description:"/></label>
             <input type="text" id="description" name="description" value="${product != null ? product.description : ''}"/>
             <div id="descriptionError" class="error"></div>
            </div>
            <div>
-            <label for="price">Price:</label>
+               <label for="price"><custom:requiredFieldTags fieldName="Price:"/></label>
             <input type="text" id="price" name="price" value="${product != null ? product.price : ''}"/>
              <div id="priceError" class="error"></div>
            </div>
