@@ -36,7 +36,7 @@
                 <tr>
                     <td>${product.code}</td>
                     <td>${product.description}</td>
-                    <td>${product.price}</td>
+                    <td>${product.priceCurrencyFormat}</td>
                     <!--On button click, the product code is sent to the servlet to be handled-->
                     <td><a href="music?action=edit&code=${product.code}">Edit</a></td>
                     <td><a href="music?action=delete&code=${product.code}">Delete</a></td>
