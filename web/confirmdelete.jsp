@@ -13,19 +13,25 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" type="text/css" media="screen" href="styles/myStyle.css" />
         <title>Product Maintenance</title>
     </head>
-    <body>
+    <header>
         <h1 style="color: cadetblue">Are you sure you want to delete this product?</h1>
+    </header>
+    <body>
         <table>
             <tr><td>Code:</td><td>${product.code}</td></tr>
             <tr><td>Description:</td><td>${product.description}</td></tr>
-            <tr><td>Price:</td><td>${product.price}</td></tr>
+            <tr><td>Price:</td><td>${product.priceCurrencyFormat}</td></tr>
         </table>
-        <input type="button" value="Yes" onClick="window.location.href = 
+        <div class="button-group">
+            <input type="button" value="Yes" onClick="window.location.href = 
                     'music?action=deleteYes&code=${product.code}'";/>
-        <input type="button" value="No" onClick="window.location.href = 
+            <input type="button" value="No" onClick="window.location.href = 
                     'music?action=deleteNo'";/>
+        </div>
+        
         
     </body>
 </html>
