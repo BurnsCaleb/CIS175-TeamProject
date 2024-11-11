@@ -98,11 +98,24 @@ public class ProductController extends HttpServlet {
         String description = request.getParameter("description");
         double price = 0.0;
 
+        if (code == null || code.trim().isEmpty()) {
+            request.setAttribute("errorCode", "Product Code is required.");
+        }
+        if (description == null || description.trim().isEmpty()) {
+            request.setAttribute("errorDescription", "Description is required.");
+        }
+        
 //      checking for a valid price input or giving an error message if incorrect
-        try {
+        try{
             price = Double.parseDouble(request.getParameter("price"));
-        } catch (NumberFormatException e) {
-            request.setAttribute("error", "The price given was invalid please try again.");
+            if (price <= 0) {
+                request.setAttribute("errorPrice", "Price must be a positive number.");
+            }
+        }catch (NumberFormatException e){
+            request.setAttribute("errorPrice", "The price given was a invalid number please try again.");
+            
+        }
+        if (request.getAttribute("errorCode") != null || request.getAttribute("errorDescription") != null || request.getAttribute("errorPrice") != null) {   
             return "/product.jsp";
         }
 
