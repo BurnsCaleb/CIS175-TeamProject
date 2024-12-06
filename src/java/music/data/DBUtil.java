@@ -1,9 +1,12 @@
 package music.data;
 
-/**
- *
- * @author burns
- */
+/*
+    Class      : CIS175 - Java II
+    Document   : DBUtil.java
+    Author     : Caleb Burns
+    Contact    : cdburns1@dmacc.edu
+    Description: Database utility functions.
+*/
 import java.sql.*;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;

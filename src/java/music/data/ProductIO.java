@@ -1,9 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-
-
 package music.data;
 
 import music.business.Product;
@@ -11,6 +5,13 @@ import java.io.*;
 
 import java.util.*;
 
+/*
+    Class      : CIS175 - Java II
+    Document   : ProductIO.java
+    Author     : Caleb Burns
+    Contact    : cdburns1@dmacc.edu
+    Description: Functions for interaction with text file.
+*/
 
 public class ProductIO {
 

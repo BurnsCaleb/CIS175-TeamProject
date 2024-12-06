@@ -1,7 +1,10 @@
 <%-- 
-    Document   : index
-    Created on : Oct 23, 2024, 10:13:51 AM
+    Class      : CIS175 - Java II
+    Document   : index.jsp
+    Created on : Oct 23, 2024
     Author     : Caleb Burns
+    Contact    : cdburns1@dmacc.edu
+    Description: Opening page for the web application.
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>

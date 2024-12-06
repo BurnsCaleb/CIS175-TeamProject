@@ -1,8 +1,10 @@
 <%-- 
-    Document   : login
-    Created on : Nov 26, 2024, 3:39:13 PM
-    Author     : Logun
-login form for authentification
+    Class      : CIS175 - Java II
+    Document   : login.jsp
+    Created on : Nov 26, 2024
+    Author     : Logun Van Luong
+    Contact    : lvanluong@dmacc.edu
+    Description: Login form for authentication.
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>

@@ -1,7 +1,10 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+/* 
+    Class      : CIS175 - Java II
+    Document   : Product.java
+    Author     : Caleb Burns
+    Contact    : cdburns1@dmacc.edu
+    Description: Product class contains productId, code, description, and price.
+*/
 package music.business;
 
 import java.io.Serializable;

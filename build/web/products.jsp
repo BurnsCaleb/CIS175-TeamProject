@@ -1,7 +1,10 @@
 <%-- 
-    Document   : products
-    Created on : Oct 23, 2024, 10:30:50 AM
+    Class      : CIS175 - Java II
+    Document   : products.jsp
+    Created on : Oct 23, 2024
     Author     : Caleb Burns
+    Contact    : cdburns1@dmacc.edu
+    Description: Display all products in a table.
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -30,8 +33,7 @@
                 </th>
                 <th></th>
             </tr>
-            <!--Grab each product from product.txt-->
-            <!--productsList is made available to the request object in the servlet-->
+
             <c:forEach var="product" items="${productsList}">
                 <tr>
                     <td>${product.code}</td>

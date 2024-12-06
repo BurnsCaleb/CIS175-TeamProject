@@ -1,11 +1,15 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package music.tags;
 import javax.servlet.jsp.tagext.SimpleTagSupport;
 import java.io.IOException;
 import javax.servlet.jsp.JspException;
+
+/*
+    Class      : CIS175 - Java II
+    Document   : RequiredFieldTags.java
+    Author     : Ian McElderry
+    Contact    : ipmcelderry@dmacc.edu
+    Description: Custom tag validation.
+*/
 
 //created custom jsp tag 
 public class RequiredFieldTags extends SimpleTagSupport{

@@ -1,7 +1,9 @@
 <%-- 
-    Document   : confirmdelete
-    Created on : Oct 26, 2024, 10:39:41 PM
-    Author     : Logun
+    Class      : CIS175 - Java II    
+    Document   : confirmdelete.jsp
+    Created on : Oct 26, 2024
+    Author     : Logun Van Luong
+    Contact    : lvanluong@dmacc.edu
     Description: Confirmation page for deletion of items,
     displays information of item to be deleted and two buttons of yes and no.
     Yes deletes the item and returns user to products page with item gone,

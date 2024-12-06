@@ -1,4 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+    Class      : CIS175 - Java II
+    Document   : web.xml
+    Author     : Logun Van Luong
+    Contact    : lvanluong@dmacc.edu
+    Description: Contains authentication roles.
+-->
 <web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee 

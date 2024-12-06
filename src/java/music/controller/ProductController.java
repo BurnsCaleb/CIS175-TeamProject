@@ -10,10 +10,13 @@ import javax.servlet.http.HttpServletResponse;
 import music.business.Product;
 import music.data.ProductDB;
 
-/**
- *
- * @author burns
- */
+/*
+    Class      : CIS175 - Java II
+    Document   : ProductController.java
+    Author     : Caleb Burns, Logun Van Luong, Ian McElderry
+    Contact    : cdburns1@dmacc.edu, lvanluong@dmacc.edu, ipmcelderry@dmacc.edu
+    Description: Servlet Controller to handle actions.
+*/
 @WebServlet("/music")
 
 public class ProductController extends HttpServlet {

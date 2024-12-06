@@ -1,16 +1,16 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/UnitTests/JUnit4TestClass.java to edit this template
- */
 package music.business;
 
 import org.junit.Test;
 import static org.junit.Assert.*;
 
-/**
- *
- * @author Logun
- */
+/*
+    Class      : CIS175 - Java II
+    Document   : ProductTest.java
+    Author     : Logun Van Luong
+    Contact    : lvanluong@dmacc.edu
+    Description: Unit tests for Product class.
+*/
+
 public class ProductTest {
     
     public ProductTest() {

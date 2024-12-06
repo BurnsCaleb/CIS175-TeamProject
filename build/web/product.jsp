@@ -1,7 +1,10 @@
 <%-- 
-    Document   : product
-    Created on : Oct 23, 2024, 12:24:48 PM
+    Class      : CIS175 - Java II
+    Document   : product.jsp
+    Created on : Oct 23, 2024
     Author     : Ian McElderry
+    Contact    : ipmcelderry@dmacc.edu
+    Description: Form for editing or adding a product.
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>

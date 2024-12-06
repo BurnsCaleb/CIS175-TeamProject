@@ -1,4 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+    Class      : CIS175 - Java II
+    Document   : context.xml
+    Author     : Logun Van Luong
+    Contact    : lvanluong@dmacc.edu
+    Description: Contains JDBC realm.
+-->
 <Context antiJARLocking="true" path="/CIS175-TeamProject">
     <Realm className="org.apache.catalina.realm.JDBCRealm" debug="99" 
          driverName="com.mysql.cj.jdbc.Driver" 

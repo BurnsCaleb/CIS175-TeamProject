@@ -8,10 +8,13 @@ import javax.persistence.EntityTransaction;
 import javax.persistence.NoResultException;
 import javax.persistence.TypedQuery;
 
-/**
- *
- * @author vanluong
- */
+/*
+    Class      : CIS175 - Java II
+    Document   : ProductDB.java
+    Author     : Caleb Burns, Ian McElderry
+    Contact    : cdburns1@dmacc.edu, ipmcelderry@dmacc.edu
+    Description: Functions for database interactions.
+*/
 public class ProductDB {
 
     public static void insert(Product product) {
