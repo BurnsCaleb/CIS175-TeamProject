@@ -6,9 +6,16 @@ package music.business;
 
 import java.io.Serializable;
 import java.text.NumberFormat;
-
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+//sets up JPA entity
+@Entity
 public class Product implements Serializable {
-
+    
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long productId;
 
     private String code;

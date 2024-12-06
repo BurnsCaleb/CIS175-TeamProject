@@ -5,6 +5,8 @@ package music.data;
  * @author burns
  */
 import java.sql.*;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
 
 public class DBUtil {
 
@@ -36,5 +38,12 @@ public class DBUtil {
         } catch (SQLException e) {
             System.err.println(e);
         }
+    }
+    // JPA Utils
+    private static final EntityManagerFactory emf =
+            Persistence.createEntityManagerFactory("productPU");
+    
+    public static EntityManagerFactory getEmFactory() {
+        return emf;
     }
 }

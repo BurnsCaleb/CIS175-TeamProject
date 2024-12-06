@@ -11,5 +11,37 @@
     <welcome-file-list>
         <welcome-file>index.jsp</welcome-file>
     </welcome-file-list>
+    
+    <security-role>
+        <description>customer-service</description>
+        <role-name>service</role-name>
+    </security-role>
+    <security-role>
+        <description>programmers</description>
+        <role-name>programmer</role-name>
+    </security-role>
+    
+    <security-constraint>
+        <web-resource-collection>
+            <web-resource-name>Protected Area</web-resource-name>
+            <url-pattern>/music/*</url-pattern>
+        </web-resource-collection>
+        <auth-constraint>
+            <role-name>service</role-name>
+            <role-name>programmer</role-name>
+        </auth-constraint>
+        <user-data-constraint>
+            <transport-guarantee>CONFIDENTIAL</transport-guarantee>
+        </user-data-constraint>
+    </security-constraint>
+    
+    <login-config>
+        <auth-method>FORM</auth-method>
+        <form-login-config>
+            <form-login-page>/login.jsp</form-login-page>
+            <form-error-page>/login.jsp</form-error-page>
+        </form-login-config>
+    </login-config>
+    
 </web-app>
 

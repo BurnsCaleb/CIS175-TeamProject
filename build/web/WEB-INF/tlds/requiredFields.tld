@@ -13,9 +13,17 @@
         <name>requiredFieldTags</name>
         <tag-class>music.tags.RequiredFieldTags</tag-class>
         <body-content>empty</body-content>
+
         <attribute>
             <name>fieldName</name>
             <required>true</required>
         </attribute>
+
+        <attribute>
+            <name>error</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
     </tag>
+
 </taglib>
