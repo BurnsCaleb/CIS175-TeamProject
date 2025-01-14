@@ -2,6 +2,7 @@ package substitution.manager.cis152.controllers;
 
 import java.io.IOException;
 import java.net.URL;
+import java.text.DecimalFormat;
 import java.util.Iterator;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
@@ -217,8 +218,9 @@ public class SubstitutionScreenController implements Initializable {
                 currSubTime = gameSetup.getLastSubTime();
 
                 // Update players on the court for mins in
+                DecimalFormat rounder = new DecimalFormat("#.##");
                 for (Player player : onCourt.getOnCourt()) {
-                    player.updateMinsPlayed((prevSubTime - currSubTime) / 60.0);
+                    player.updateMinsPlayed(Double.parseDouble(rounder.format((prevSubTime - currSubTime) / 60.0)));
                 }
 
             }
